@@ -185,38 +185,66 @@ a {
 }
 /* line 96, ../sass/screen.scss */
 .container .st-panel {
-  background-color: #fff;
   overflow: hidden;
 }
-/* line 105, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
+.container .st-panel .st-desc {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 50%;
+  top: -100px;
+  margin-left: -100px;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 107, ../sass/screen.scss */
+.container .st-panel:nth-child(odd) {
+  background-color: #fff;
+}
+/* line 109, ../sass/screen.scss */
+.container .st-panel:nth-child(odd) .st-desc {
+  background-color: #fa96b5;
+}
+/* line 113, ../sass/screen.scss */
+.container .st-panel:nth-child(even) {
+  background-color: #fa96b5;
+}
+/* line 115, ../sass/screen.scss */
+.container .st-panel:nth-child(even) .st-desc {
+  background-color: #fff;
+}
+/* line 123, ../sass/screen.scss */
 .container #st-control-1:checked ~ .st-scroll {
   -moz-transform: translateY(0%);
   -ms-transform: translateY(0%);
   -webkit-transform: translateY(0%);
   transform: translateY(0%);
 }
-/* line 105, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 .container #st-control-2:checked ~ .st-scroll {
   -moz-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
 }
-/* line 105, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 .container #st-control-3:checked ~ .st-scroll {
   -moz-transform: translateY(-200%);
   -ms-transform: translateY(-200%);
   -webkit-transform: translateY(-200%);
   transform: translateY(-200%);
 }
-/* line 105, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 .container #st-control-4:checked ~ .st-scroll {
   -moz-transform: translateY(-300%);
   -ms-transform: translateY(-300%);
   -webkit-transform: translateY(-300%);
   transform: translateY(-300%);
 }
-/* line 105, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 .container #st-control-5:checked ~ .st-scroll {
   -moz-transform: translateY(-400%);
   -ms-transform: translateY(-400%);
