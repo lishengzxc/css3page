@@ -117,7 +117,24 @@ a {
 .container .st-container input:checked + a {
   background-color: #821134;
 }
-/* line 52, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
+.container .st-container input:checked + a::after {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -10px;
+  content: '';
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  border: 10px solid transparent;
+  border-bottom-color: #821134;
+}
+/* line 64, ../sass/screen.scss */
+.container .st-container input:hover:not(:checked) + a {
+  background-color: #ad244f;
+}
+/* line 69, ../sass/screen.scss */
 .container .st-container a {
   z-index: 2333;
   font-size: 16px;
@@ -126,23 +143,23 @@ a {
   color: #fff;
   text-shadow: 1px 1px 1px rgba(151, 24, 64, 0.2);
 }
-/* line 62, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .container .st-container #st-control-1, .container .st-container #st-control-1 + a {
   left: 0%;
 }
-/* line 62, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .container .st-container #st-control-2, .container .st-container #st-control-2 + a {
   left: 20%;
 }
-/* line 62, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .container .st-container #st-control-3, .container .st-container #st-control-3 + a {
   left: 40%;
 }
-/* line 62, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .container .st-container #st-control-4, .container .st-container #st-control-4 + a {
   left: 60%;
 }
-/* line 62, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .container .st-container #st-control-5, .container .st-container #st-control-5 + a {
   left: 80%;
 }

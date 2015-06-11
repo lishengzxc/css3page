@@ -47,8 +47,25 @@ a {
       cursor: pointer;
       &:checked + a {
         background-color: #821134;
+        &::after {
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          margin-left: -10px;
+          content: '';
+          height: 0;
+          width: 0;
+          overflow: hidden;
+          border: 10px solid transparent;
+          border-bottom-color: #821134;
+        }
+
+      }
+      &:hover:not(:checked) + a {
+        background-color: #ad244f;
       }
     }
+
     a {
       z-index: 2333;
       font-size: 16px;
