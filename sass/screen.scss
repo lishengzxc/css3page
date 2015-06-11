@@ -14,6 +14,28 @@
        url('../fonts/raphaelicons-webfont.woff') format('woff');
 }
 
+@include keyframes(moveDown)  {
+  0% {
+    @include transform(translateY(-20px));
+    opacity: 0;
+  }
+  100% {
+    @include transform(translateY(0px));
+    opacity: 1;
+  }
+}
+
+@include keyframes(moveUp)  {
+  0% {
+    @include transform(translateY(20px));
+    opacity: 0;
+  }
+  100% {
+    @include transform(translateY(0px));
+    opacity: 1;
+  }
+}
+
 body {
   background-color: #ddd;
   font-size: 15px;
@@ -103,6 +125,24 @@ a {
   }
   .st-panel {
     overflow: hidden;
+    h2 {
+      margin-top: 170px;
+      font-size: 54px;
+      line-height: 50px;
+      text-align: center;
+      font-weight: 900;
+      text-shadow: 1px 1px 1px rgba(151, 24, 64, 0.2);
+      -webkit-backface-visibility: hidden;
+    }
+    p {
+      padding-top: 30px;
+      width: 80%;
+      text-align: center;
+      margin: 0 auto;
+      font-size: 22px;
+      line-height: 24px;
+      -webkit-backface-visibility: hidden;
+    }
     .st-desc {
       position: absolute;
       width: 200px;
@@ -114,6 +154,9 @@ a {
     }
     &:nth-child(odd) {
       background-color: #fff;
+      h2 {
+        color: #e23a6e;
+      }
       .st-desc {
         background-color: #fa96b5;
       }
@@ -123,6 +166,12 @@ a {
     }
     &:nth-child(even) {
       background-color: #fa96b5;
+      h2 {
+        color: #fff;
+      }
+      p {
+        color: #fff;
+      }
       .st-desc {
         background-color: #fff;
       }
@@ -147,9 +196,19 @@ a {
   }
   @for $i from 1 through 5 {
     #st-control-#{$i}:checked ~ .st-scroll {
-      @include transform(translateY(($i - 1) * 100% * -1))
+      @include transform(translateY(($i - 1) * 100% * -1));
+      #st-panel-#{$i} {
+        h2 {
+          @include animation(moveDown 0.6s ease-in-out 0.3s backwards);
+        }
+        p {
+          @include animation(moveUp 0.6s ease-in-out 0.3s backwards);
+        }
+      }
     }
   }
+
+
 }
 
 

@@ -71,7 +71,87 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: "Raphaelicons";
   src: url("../fonts/raphaelicons-webfont.eot") format("eot"), url("../fonts/raphaelicons-webfont.svg") format("svg"), url("../fonts/raphaelicons-webfont.ttf") format("truetype"), url("../fonts/raphaelicons-webfont.woff") format("woff");
 }
-/* line 17, ../sass/screen.scss */
+@-moz-keyframes moveDown {
+  0% {
+    -moz-transform: translateY(-20px);
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes moveDown {
+  0% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes moveDown {
+  0% {
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@-moz-keyframes moveUp {
+  0% {
+    -moz-transform: translateY(20px);
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes moveUp {
+  0% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes moveUp {
+  0% {
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+/* line 39, ../sass/screen.scss */
 body {
   background-color: #ddd;
   font-size: 15px;
@@ -80,13 +160,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 24, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 a {
   text-decoration: none;
   color: #555;
 }
 
-/* line 29, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 .clearfix {
   width: 0;
   height: 0;
@@ -95,7 +175,7 @@ a {
   margin: 0;
 }
 
-/* line 38, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 .container .st-container {
   position: absolute;
   left: 0;
@@ -103,7 +183,7 @@ a {
   width: 100%;
   height: 100%;
 }
-/* line 44, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .container .st-container input, .container .st-container a {
   position: fixed;
   bottom: 0;
@@ -111,17 +191,17 @@ a {
   height: 34px;
   line-height: 34px;
 }
-/* line 52, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 .container .st-container input {
   opacity: 0;
   z-index: 23333;
   cursor: pointer;
 }
-/* line 56, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .container .st-container input:checked + a {
   background-color: #821134;
 }
-/* line 58, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
 .container .st-container input:checked + a::after {
   position: absolute;
   bottom: 100%;
@@ -134,11 +214,11 @@ a {
   border: 10px solid transparent;
   border-bottom-color: #821134;
 }
-/* line 72, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 .container .st-container input:hover:not(:checked) + a {
   background-color: #ad244f;
 }
-/* line 77, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 .container .st-container a {
   z-index: 2333;
   font-size: 16px;
@@ -147,33 +227,33 @@ a {
   color: #fff;
   text-shadow: 1px 1px 1px rgba(151, 24, 64, 0.2);
 }
-/* line 87, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 .container .st-container #st-control-1, .container .st-container #st-control-1 + a {
   left: 0%;
 }
-/* line 87, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 .container .st-container #st-control-2, .container .st-container #st-control-2 + a {
   left: 20%;
 }
-/* line 87, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 .container .st-container #st-control-3, .container .st-container #st-control-3 + a {
   left: 40%;
 }
-/* line 87, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 .container .st-container #st-control-4, .container .st-container #st-control-4 + a {
   left: 60%;
 }
-/* line 87, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 .container .st-container #st-control-5, .container .st-container #st-control-5 + a {
   left: 80%;
 }
-/* line 92, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 .container .st-scroll, .container .st-panel {
   position: relative;
   width: 100%;
   height: 100%;
 }
-/* line 97, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 .container .st-scroll {
   left: 0;
   top: 0;
@@ -187,11 +267,31 @@ a {
   -webkit-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
 }
-/* line 104, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 .container .st-panel {
   overflow: hidden;
 }
-/* line 106, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
+.container .st-panel h2 {
+  margin-top: 170px;
+  font-size: 54px;
+  line-height: 50px;
+  text-align: center;
+  font-weight: 900;
+  text-shadow: 1px 1px 1px rgba(151, 24, 64, 0.2);
+  -webkit-backface-visibility: hidden;
+}
+/* line 137, ../sass/screen.scss */
+.container .st-panel p {
+  padding-top: 30px;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 22px;
+  line-height: 24px;
+  -webkit-backface-visibility: hidden;
+}
+/* line 146, ../sass/screen.scss */
 .container .st-panel .st-desc {
   position: absolute;
   width: 200px;
@@ -204,31 +304,43 @@ a {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 115, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 .container .st-panel:nth-child(odd) {
   background-color: #fff;
 }
-/* line 117, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
+.container .st-panel:nth-child(odd) h2 {
+  color: #e23a6e;
+}
+/* line 160, ../sass/screen.scss */
 .container .st-panel:nth-child(odd) .st-desc {
   background-color: #fa96b5;
 }
-/* line 120, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 .container .st-panel:nth-child(odd) [data-icon]::after {
   color: #fff;
 }
-/* line 124, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .container .st-panel:nth-child(even) {
   background-color: #fa96b5;
 }
-/* line 126, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
+.container .st-panel:nth-child(even) h2 {
+  color: #fff;
+}
+/* line 172, ../sass/screen.scss */
+.container .st-panel:nth-child(even) p {
+  color: #fff;
+}
+/* line 175, ../sass/screen.scss */
 .container .st-panel:nth-child(even) .st-desc {
   background-color: #fff;
 }
-/* line 129, ../sass/screen.scss */
+/* line 178, ../sass/screen.scss */
 .container .st-panel:nth-child(even) [data-icon]::after {
   color: #fa96b5;
 }
-/* line 133, ../sass/screen.scss */
+/* line 182, ../sass/screen.scss */
 .container .st-panel [data-icon]::after {
   content: attr(data-icon);
   position: absolute;
@@ -246,38 +358,98 @@ a {
   -webkit-transform: rotate(-45deg) translateY(25%);
   transform: rotate(-45deg) translateY(25%);
 }
-/* line 149, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 .container #st-control-1:checked ~ .st-scroll {
   -moz-transform: translateY(0%);
   -ms-transform: translateY(0%);
   -webkit-transform: translateY(0%);
   transform: translateY(0%);
 }
-/* line 149, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
+.container #st-control-1:checked ~ .st-scroll #st-panel-1 h2 {
+  -moz-animation: moveDown 0.6s ease-in-out 0.3s backwards;
+  -webkit-animation: moveDown 0.6s ease-in-out 0.3s backwards;
+  animation: moveDown 0.6s ease-in-out 0.3s backwards;
+}
+/* line 204, ../sass/screen.scss */
+.container #st-control-1:checked ~ .st-scroll #st-panel-1 p {
+  -moz-animation: moveUp 0.6s ease-in-out 0.3s backwards;
+  -webkit-animation: moveUp 0.6s ease-in-out 0.3s backwards;
+  animation: moveUp 0.6s ease-in-out 0.3s backwards;
+}
+/* line 198, ../sass/screen.scss */
 .container #st-control-2:checked ~ .st-scroll {
   -moz-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
 }
-/* line 149, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
+.container #st-control-2:checked ~ .st-scroll #st-panel-2 h2 {
+  -moz-animation: moveDown 0.6s ease-in-out 0.3s backwards;
+  -webkit-animation: moveDown 0.6s ease-in-out 0.3s backwards;
+  animation: moveDown 0.6s ease-in-out 0.3s backwards;
+}
+/* line 204, ../sass/screen.scss */
+.container #st-control-2:checked ~ .st-scroll #st-panel-2 p {
+  -moz-animation: moveUp 0.6s ease-in-out 0.3s backwards;
+  -webkit-animation: moveUp 0.6s ease-in-out 0.3s backwards;
+  animation: moveUp 0.6s ease-in-out 0.3s backwards;
+}
+/* line 198, ../sass/screen.scss */
 .container #st-control-3:checked ~ .st-scroll {
   -moz-transform: translateY(-200%);
   -ms-transform: translateY(-200%);
   -webkit-transform: translateY(-200%);
   transform: translateY(-200%);
 }
-/* line 149, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
+.container #st-control-3:checked ~ .st-scroll #st-panel-3 h2 {
+  -moz-animation: moveDown 0.6s ease-in-out 0.3s backwards;
+  -webkit-animation: moveDown 0.6s ease-in-out 0.3s backwards;
+  animation: moveDown 0.6s ease-in-out 0.3s backwards;
+}
+/* line 204, ../sass/screen.scss */
+.container #st-control-3:checked ~ .st-scroll #st-panel-3 p {
+  -moz-animation: moveUp 0.6s ease-in-out 0.3s backwards;
+  -webkit-animation: moveUp 0.6s ease-in-out 0.3s backwards;
+  animation: moveUp 0.6s ease-in-out 0.3s backwards;
+}
+/* line 198, ../sass/screen.scss */
 .container #st-control-4:checked ~ .st-scroll {
   -moz-transform: translateY(-300%);
   -ms-transform: translateY(-300%);
   -webkit-transform: translateY(-300%);
   transform: translateY(-300%);
 }
-/* line 149, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
+.container #st-control-4:checked ~ .st-scroll #st-panel-4 h2 {
+  -moz-animation: moveDown 0.6s ease-in-out 0.3s backwards;
+  -webkit-animation: moveDown 0.6s ease-in-out 0.3s backwards;
+  animation: moveDown 0.6s ease-in-out 0.3s backwards;
+}
+/* line 204, ../sass/screen.scss */
+.container #st-control-4:checked ~ .st-scroll #st-panel-4 p {
+  -moz-animation: moveUp 0.6s ease-in-out 0.3s backwards;
+  -webkit-animation: moveUp 0.6s ease-in-out 0.3s backwards;
+  animation: moveUp 0.6s ease-in-out 0.3s backwards;
+}
+/* line 198, ../sass/screen.scss */
 .container #st-control-5:checked ~ .st-scroll {
   -moz-transform: translateY(-400%);
   -ms-transform: translateY(-400%);
   -webkit-transform: translateY(-400%);
   transform: translateY(-400%);
+}
+/* line 201, ../sass/screen.scss */
+.container #st-control-5:checked ~ .st-scroll #st-panel-5 h2 {
+  -moz-animation: moveDown 0.6s ease-in-out 0.3s backwards;
+  -webkit-animation: moveDown 0.6s ease-in-out 0.3s backwards;
+  animation: moveDown 0.6s ease-in-out 0.3s backwards;
+}
+/* line 204, ../sass/screen.scss */
+.container #st-control-5:checked ~ .st-scroll #st-panel-5 p {
+  -moz-animation: moveUp 0.6s ease-in-out 0.3s backwards;
+  -webkit-animation: moveUp 0.6s ease-in-out 0.3s backwards;
+  animation: moveUp 0.6s ease-in-out 0.3s backwards;
 }
